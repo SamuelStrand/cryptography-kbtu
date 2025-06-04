@@ -193,7 +193,7 @@ class DigitalSignatureApp(QWidget):
         hash_algo = self.combo_hash.currentText()
         try:
             hash_int = sha.compute_hash(msg, hash_algo)
-        except Exception:
+        except Exception as e:
             QMessageBox.critical(self, "Error", "Hashing failed: " + str(e))
             return
         algo = self.combo_sig.currentText()
